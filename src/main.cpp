@@ -828,7 +828,7 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 4 * COIN;
+    int64 nSubsidy = 80 * COIN;
 
 
     if(nHeight < 17280) // no block reward within the first 3 days
@@ -839,8 +839,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 0.35 * 24 * 60 * 60; // BubbleCoin: 0.35 days
-static const int64 nTargetSpacing = 15; // BubbleCoin: 15 seconds
+static const int64 nTargetTimespan = 7 * 24 * 60 * 60; // BubbleCoin: dif change every week
+static const int64 nTargetSpacing = 5 * 60; // BubbleCoin: 5 mins
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 // Thanks: Balthazar for suggesting the following fix
@@ -2005,10 +2005,10 @@ bool LoadBlockIndex(bool fAllowNew)
     {
         if (!fAllowNew)
             return false;
-    
+
 	// Genesis block:
-	// block.nTime = 1366559428 
-	// block.nNonce = 2085386442 
+	// block.nTime = 1366559428
+	// block.nNonce = 2085386442
 	// block.GetHash = 384b060671f4a93948e9c168216dadb0ca2fbc54aa11c86b0345b6af1c59b2f5
 	// CBlock(hash=384b060671f4a93948e9, PoW=00000951e146b0026411, ver=1,
 	//  hashPrevBlock=00000000000000000000, hashMerkleRoot=5a2e19825b,
@@ -2017,7 +2017,7 @@ bool LoadBlockIndex(bool fAllowNew)
 	// CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d010441746f646f3a207265706c616365207769746820736f6d657468696e67207468617420656e7375726573206e6f207072656d696e696e6720746f6f6b20706c616365)
 	// CTxOut(error)
 	// vMerkleTree: 5a2e19825b
-        
+
         // Genesis block
         const char* pszTimestamp = "todo: replace with something that ensures no premining took place";
         CTransaction txNew;
