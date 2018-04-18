@@ -1,10 +1,10 @@
 BubbleCoin (BBC) - a 'faster' version of Litecoin which also uses scrypt
 as a proof of work scheme and is intended for microtransactions.
- - 15 seconds block targets: beat that MinCoin! ;)
- - 42 007 680 total coins
- - no subsidy within the first 3 days and after approximately 5 years;
-    in between: 4 coins per generated block
- - difficulty retargets every 0.35 days
+ - 5 mins block targets
+ - 60 000 000 total coins
+ - no subsidy within the first 3 days and after approximately 5 years; (não sei o que é!)
+    in between: 80 coins per generated block
+ - difficulty retargets every week
  - currently peers are looked up over IRC only
  - currently no block checkpoints are in the code (but could be easily
    added)
@@ -47,5 +47,5 @@ after the warning if action is not taken by the author. Pull requests closed
 in this manner will have their corresponding issue labeled 'stagnant'.
 
 Issues with no commits will be given a similar warning, and closed after
-15 days from their last activity. Issues closed in this manner will be 
+15 days from their last activity. Issues closed in this manner will be
 labeled 'stale'.
